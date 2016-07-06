@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
+  resources :posts
+  resources :posts
+  devise_for :users
+  devise_scope:user do 
+    authenticated :user do
+      root to: "pages#home", as: :authenticated_root, via: :get
+    end
+  unauthenticated do
+    root to:"devise/sessions#new"
+  end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
