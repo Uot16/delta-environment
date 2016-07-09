@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   unauthenticated do
     root to:"devise/sessions#new"
   end
+  
+  get '/home' => 'home#index'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
