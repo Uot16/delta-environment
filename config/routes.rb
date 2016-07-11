@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
  get '/home'=> 'pages#home'
+ mount Thredded::Engine => '/forum'
   resources :posts
   devise_for :users
   
