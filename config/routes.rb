@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   devise_scope:user do 
     authenticated :user do
 
+<<<<<<< HEAD
       root to: "pages#home", as: :authenticated_root, via: :get
+=======
+      root to: "pages#index", as: :authenticated_root, via: :get
+>>>>>>> master
 
     get "login", :to => "devise/sessions#new"
     get "register", :to => "devise/registrations#new"
