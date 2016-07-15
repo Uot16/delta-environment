@@ -3,8 +3,6 @@ class PagesController < ApplicationController
   end
   def index
   end
-  def about
-  end
   def forum
   end
   def hello

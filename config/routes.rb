@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  #get 'pages/about'
+  #get 'pages/index'
+  #get 'pages/hello'
+  #get 'pages/home'
+  #get 'pages/project'
+  #get '/forum/private-topics/'=> 'posts#create'
+
   get '/about' => 'pages#about'
   get '/index' => 'pages#index'
   get '/hello' => 'pages#hello'
@@ -12,16 +20,21 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
   
+  get '/users/:id'=> 'thredded/messageboards#index'
+  # get '/forum'=> 'thredded/messageboards#index'
+  
   devise_scope:user do 
     authenticated :user do
 
       root to: "pages#home", as: :authenticated_root, via: :get
+
 
     get "login", :to => "devise/sessions#new"
     get "register", :to => "devise/registrations#new"
     get "settings", :to => "devise/registrations#edit"
     get "logout",   :to => "devise/sessions#destroy"
      
+
     end
     
   unauthenticated do

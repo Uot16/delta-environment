@@ -474,5 +474,5 @@ you can use the generic selector below, but it's slower:
 	content: "\e091";
 }
 .icon-magnifier-remove:before {
-	content: "\e092"; 
+	content: "\e092";
 }
