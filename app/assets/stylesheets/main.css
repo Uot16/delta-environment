@@ -8,7 +8,7 @@ body {
 h1 {
 	font-size: 32px;
   font-family: Palatino, 'Palatino Linotype', serif;
-  color: rgb(121,149,117);
+  color: #ffffff;
 }
 
 h2 {
@@ -20,22 +20,23 @@ h2 {
 	padding: 250px 0;
 	margin: 30px;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  background-image: url("http://images.clipartpanda.com/clipart-tree-sturdy_tree.png");
+  background-image:url("delta-enviroment/app/assets/images/earth2.jpg");
   background-size: cover;
   color: #ffffff;
 }
-
-
-p {
-  font-size: 2rem;
+a {font-size: 20px;
+   color: #ffffff;
 }
 
 .hero a {
-	color: #00FFAA;
+	color: #ffffff;
 	font-size: 1.25em;
 	text-decoration: none;
 }
-
 #footer {
   font-size: 0.75rem;
+  background-repeat: no-repeat;
+ background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
+
+

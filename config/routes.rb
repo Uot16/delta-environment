@@ -1,22 +1,23 @@
 Rails.application.routes.draw do
-
+  get 'pages/about'
+  get 'pages/index'
+  get 'pages/hello'
+  get 'pages/home'
+  get 'pages/project'
+ mount Thredded::Engine => '/forum'
   resources :posts
   devise_for :users
   
   devise_scope:user do 
     authenticated :user do
-      root to: "pages#home", as: :authenticated_root, via: :get
-      #root to: "pages#video", as: :authenticated_root, via: :get
+      root to: "pages#project", as: :authenticated_root, via: :get
     end
     
-   unauthenticated do
-       root to: 'pages#video'
-     #root to:"devise/sessions#new"
-   end
-  end
-  
-
-
+  unauthenticated do
+    root to:"devise/sessions#new"
+    end
+  end 
+ 
 
  
  
