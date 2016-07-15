@@ -1,26 +1,39 @@
 Rails.application.routes.draw do
-  get 'pages/about'
-  get 'pages/index'
-  get 'pages/hello'
-  get 'pages/home'
-  get 'pages/project'
-  get 'pages/contact'
-  get 'pages/forum'
-  get 'pages/services'
+  get '/about' => 'pages#about'
+  get '/index' => 'pages#index'
+  get '/hello' => 'pages#hello'
+  get '/home'  => 'pages#home'
+  get '/project'  => 'pages#project'
+  get '/services'  => 'pages#services'
+  get '/forum'  => 'pages#forum'
+  get '/contact'  => 'pages#contact'
+  
  mount Thredded::Engine => '/forum'
   resources :posts
   devise_for :users
   
   devise_scope:user do 
     authenticated :user do
+
       root to: "pages#index", as: :authenticated_root, via: :get
+
+    get "login", :to => "devise/sessions#new"
+    get "register", :to => "devise/registrations#new"
+    get "settings", :to => "devise/registrations#edit"
+    get "logout",   :to => "devise/sessions#destroy"
+     
     end
     
   unauthenticated do
     root to:"devise/sessions#new"
+    end
   end 
- end
  
+
+ 
+ 
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -75,4 +88,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
