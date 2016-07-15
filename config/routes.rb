@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+  get 'pages/index'
+  get 'pages/hello'
   get 'pages/home'
-
+  get 'pages/contact'
+  get 'pages/forum'
+  get 'pages/project'
+  get 'pages/services'
   resources :posts
   devise_for :users
   
   devise_scope:user do 
     authenticated :user do
-      root to: "pages#home", as: :authenticated_root, via: :get
+      root to: "pages#project", as: :authenticated_root, via: :get
     end
     
   unauthenticated do
