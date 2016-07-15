@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/hello'
   get 'pages/home'
-  get 'pages/contact'
-  get 'pages/forum'
   get 'pages/project'
-  get 'pages/services'
+ mount Thredded::Engine => '/forum'
   resources :posts
   devise_for :users
   
@@ -19,7 +17,7 @@ Rails.application.routes.draw do
     root to:"devise/sessions#new"
     end
   end 
-  get '/home'=> 'pages#home'
+ 
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
