@@ -10,7 +10,7 @@
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
+	:before {
 	font-family: 'Simple-Line-Icons';
 	content: attr(data-icon);
 	speak: none;
@@ -474,5 +474,5 @@ you can use the generic selector below, but it's slower:
 	content: "\e091";
 }
 .icon-magnifier-remove:before {
-	content: "\e092";
+	content: "\e092"; 
 }
