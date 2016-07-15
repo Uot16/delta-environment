@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   
   devise_scope:user do 
     authenticated :user do
+    get "login", :to => "devise/sessions#new"
+    get "register", :to => "devise/registrations#new"
+    get "settings", :to => "devise/registrations#edit"
+    get "logout",   :to => "devise/sessions#destroy"
       root to: "pages#home", as: :authenticated_root, via: :get
     end
     
