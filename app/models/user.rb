@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin
- # has_role?(:admin)
-end       
-end
+    return email == 'adoawesome15@gmail.com'
+  end
+ 
+ def to_s
+   email
+ end
+ end
