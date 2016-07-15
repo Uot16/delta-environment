@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
-  get 'pages/home'
- get '/home'=> 'pages#home'
+
   resources :posts
   devise_for :users
   
   devise_scope:user do 
     authenticated :user do
       root to: "pages#home", as: :authenticated_root, via: :get
+      #root to: "pages#video", as: :authenticated_root, via: :get
     end
     
-  unauthenticated do
-    root to:"devise/sessions#new"
-    end
-  end 
+   unauthenticated do
+       root to: 'pages#video'
+     #root to:"devise/sessions#new"
+   end
+  end
+  
+
+
+
  
  
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -69,4 +76,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
