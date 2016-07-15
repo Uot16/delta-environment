@@ -9,8 +9,6 @@ class PagesController < ApplicationController
   end
   def hello
   end
-  def about
-  end
   def contact
   end
   def services
